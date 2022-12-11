@@ -11,7 +11,7 @@ const DB = process.env.DATABASE.replace(
 );
 
 async function dbConnect() {
-	await mongoose.connect(DB);
+	await mongoose.set('strictQuery', true).connect(DB);
 	console.log('db connection successful');
 }
 
@@ -19,5 +19,5 @@ dbConnect().catch((err) => console.log(err));
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, '127.0.0.1', () => {
-	console.log('Server listening');
+	console.log('Server listening on port ', PORT);
 });

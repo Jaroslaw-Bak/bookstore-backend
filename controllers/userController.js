@@ -18,18 +18,3 @@ exports.getUser = (req, res) => {
 		message: 'get user route id: ' + id,
 	});
 };
-exports.updateUser = (req, res) => {
-	const id = req.params.id;
-	res.json({
-		status: 'success',
-		message: 'update user id: ' + id,
-	});
-};
-
-exports.deleteUser = (req, res) => {
-	const id = req.params.id;
-	res.json({
-		status: 'success',
-		message: 'delete user id: ' + id,
-	});
-};

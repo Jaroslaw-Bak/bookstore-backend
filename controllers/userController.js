@@ -1,7 +1,14 @@
-exports.getAllUsers = (req, res) => {
+const User = require('../models/userModel');
+
+exports.getAllUsers = async (req, res) => {
+	const users = await User.find();
+
 	res.json({
 		status: 'success',
 		message: 'get users',
+		data: {
+			users,
+		},
 	});
 };
 exports.createUser = (req, res) => {

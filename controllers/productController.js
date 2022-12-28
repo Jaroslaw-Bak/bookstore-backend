@@ -19,21 +19,32 @@ exports.getProducts = async (req, res) => {
 };
 
 exports.createProduct = async (req, res) => {
-	const newProduct = await Product.create(req.body);
-	res.status(201).json({
-		status: 'success',
-		message: 'create product',
-		data: {
-			newProduct
-		},
-	});
+	try {
+		const newProduct = await Product.create(req.body);
+		res.status(201).json({
+			status: 'success',
+			message: 'create product',
+			data: {
+				newProduct,
+			},
+		});
+	} catch (err) {
+		res.status(404).json({
+			status: 'fail',
+			message: err,
+		});
+	}
 };
 
-exports.getProduct = (req, res) => {
+exports.getProduct = async (req, res) => {
 	const id = req.params.id;
-	res.json({
+	const product = await Product.findOne({ _id: id });
+	res.status(200).json({
 		status: 'success',
 		message: 'get product id:  ' + id,
+		data: {
+			product,
+		},
 	});
 };
 

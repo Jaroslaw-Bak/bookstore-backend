@@ -7,7 +7,7 @@ const productRouter = require('./routes/productRoutes');
 const userRouter = require('./routes/userRoutes');
 
 let corsOptions = {
-	'Access-Control-Allow-Origin': ["http://localhost:3000", "https://wonderful-custard-309b86.netlify.app"],
+	origin: ["http://localhost:3000", "https://bookstore-frontend-beryl.vercel.app"],
   };
 //MIDDLEWARE
 app.use(cors(corsOptions));

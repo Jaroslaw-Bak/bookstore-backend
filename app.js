@@ -7,7 +7,7 @@ const productRouter = require('./routes/productRoutes');
 const userRouter = require('./routes/userRoutes');
 
 let corsOptions = {
-	origin: ["http://localhost:3000", "bookstore-frontend-m8xepq94d-jaroslaw-bak.vercel.app"],
+	"Access-Control-Allow-Origin": ["http://localhost:3000", "bookstore-frontend-m8xepq94d-jaroslaw-bak.vercel.app"],
   };
 //MIDDLEWARE
 app.use(cors(corsOptions));

@@ -11,7 +11,7 @@ const userRouter = require('./routes/userRoutes');
 app.use(cors());
 
 if (process.env.NODE_ENV === 'development') {
-	app.use(morgan('development'));
+	app.use(morgan());
 }
 
 app.use(bodyParser.json());

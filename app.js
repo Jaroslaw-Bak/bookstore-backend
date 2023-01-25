@@ -8,6 +8,7 @@ const userRouter = require('./routes/userRoutes');
 
 let corsOptions = {
 	origin : '*',
+	'Access-Control-Allow-Origin': '*'
   };
 //MIDDLEWARE
 app.use(cors(corsOptions));

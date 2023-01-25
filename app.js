@@ -7,7 +7,7 @@ const productRouter = require('./routes/productRoutes');
 const userRouter = require('./routes/userRoutes');
 
 let corsOptions = {
-	origin: ["http://localhost:3000", "https://wonderful-custard-309b86.netlify.app"],
+	'Access-Control-Allow-Origin': ["http://localhost:3000", "https://wonderful-custard-309b86.netlify.app"],
   };
 //MIDDLEWARE
 app.use(cors(corsOptions));

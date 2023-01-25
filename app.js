@@ -6,8 +6,11 @@ const morgan = require('morgan');
 const productRouter = require('./routes/productRoutes');
 const userRouter = require('./routes/userRoutes');
 
+let corsOptions = {
+	origin: ["http://localhost:3000", "https://wonderful-custard-309b86.netlify.app"],
+  };
 //MIDDLEWARE
-app.use(cors());
+app.use(cors(corsOptions));
 if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('development'));
 }

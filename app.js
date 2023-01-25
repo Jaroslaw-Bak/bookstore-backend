@@ -7,7 +7,7 @@ const productRouter = require('./routes/productRoutes');
 const userRouter = require('./routes/userRoutes');
 
 let corsOptions = {
-	origin : 'https://bookstore-frontend-beryl.vercel.app',
+	origin : '*',
   };
 //MIDDLEWARE
 app.use(cors(corsOptions));
